@@ -1,0 +1,36 @@
+../bme280/BME280.cpp:14:1:BME280::bme280::bme280()	1
+../bme280/BME280.cpp:19:1:BME280::bme280::~bme280()	2
+../bme280/BME280.cpp:19:1:virtual BME280::bme280::~bme280()	1
+../bme280/BME280.cpp:23:6:virtual bool BME280::bme280::init()	1
+../bme280/BME280.cpp:25:6:virtual bool BME280::bme280i2c::init()	1
+../bme280/BME280.cpp:32:6:void BME280::bme280::main()	17
+../bme280/BME280.cpp:100:9:virtual uint8_t BME280::bme280::readReg8(BME280::bme280_reg8_t*)	1
+../bme280/BME280.cpp:104:9:virtual uint8_t BME280::bme280::writeReg8(BME280::bme280_reg8_t*)	1
+../bme280/BME280.cpp:108:6:virtual void BME280::bme280::readRegMulti(BME280::bme280_reg_addr_t, uint8_t*, uint8_t)	1
+../bme280/BME280.cpp:111:6:virtual void BME280::bme280::writeRegMulti()	1
+../bme280/BME280.cpp:114:6:void BME280::bme280::reset()	1
+../bme280/BME280.cpp:120:8:double BME280::bme280::bme280_compensate_T_double(BME280::bme280_S32_t)	1
+../bme280/BME280.cpp:130:8:double BME280::bme280::bme280_compensate_P_double(BME280::bme280_S32_t)	2
+../bme280/BME280.cpp:147:8:double BME280::bme280::bme280_compensate_H_double(BME280::bme280_S32_t)	3
+../bme280/BME280.cpp:160:6:bool BME280::bme280::readIDReg()	2
+../bme280/BME280.cpp:170:6:void BME280::bme280::readConfigReg()	1
+../bme280/BME280.cpp:175:6:void BME280::bme280::readCtrlMeas()	1
+../bme280/BME280.cpp:180:6:void BME280::bme280::readStatusReg()	1
+../bme280/BME280.cpp:185:6:void BME280::bme280::readCal()	1
+../bme280/BME280.cpp:216:6:void BME280::bme280::readHumCal()	1
+../bme280/BME280.cpp:245:6:void BME280::bme280::setCtrlMeasReg(BME280::bme280_osrs_t_t, BME280::bme280_osrs_p_t, BME280::bme280_mode_t)	1
+../bme280/BME280.cpp:251:6:void BME280::bme280::setConfigReg(BME280::bme280_sb_t, BME280::bme280_filter_t, BME280::bme280_spi_en)	1
+../bme280/BME280.cpp:258:6:void BME280::bme280::setCtrlHumReg(BME280::bme280_osrs_h_t)	1
+../bme280/BME280.cpp:265:6:bool BME280::bme280::startMeasurement()	2
+../bme280/BME280.cpp:278:6:bool BME280::bme280::readTempPressureHum(double*, double*, double*)	2
+../bme280/BME280.cpp:316:6:bool BME280::bme280::newData()	1
+../bme280/BME280.cpp:323:6:bool BME280::bme280::GetTemperature(double*)	1
+../bme280/BME280.cpp:328:6:bool BME280::bme280::GetPressure(double*)	1
+../bme280/BME280.cpp:334:6:bool BME280::bme280::GetHumidity(double*)	1
+../bme280/BME280.cpp:343:1:BME280::bme280i2c::bme280i2c(I2C_HandleTypeDef*, BME280::bme280_i2c_addr_t)	1
+../bme280/BME280.cpp:349:1:BME280::bme280i2c::~bme280i2c()	2
+../bme280/BME280.cpp:349:1:virtual BME280::bme280i2c::~bme280i2c()	1
+../bme280/BME280.cpp:354:9:virtual uint8_t BME280::bme280i2c::readReg8(BME280::bme280_reg8_t*)	1
+../bme280/BME280.cpp:364:9:virtual uint8_t BME280::bme280i2c::writeReg8(BME280::bme280_reg8_t*)	1
+../bme280/BME280.cpp:372:6:virtual void BME280::bme280i2c::readRegMulti(BME280::bme280_reg_addr_t, uint8_t*, uint8_t)	1
+../bme280/BME280.cpp:378:6:virtual void BME280::bme280i2c::writeRegMulti()	1

@@ -1,0 +1,32 @@
+../bmp280/bmp280.cpp:17:1:BMP280::bmp280::bmp280()	1
+../bmp280/bmp280.cpp:22:1:BMP280::bmp280::~bmp280()	2
+../bmp280/bmp280.cpp:22:1:virtual BMP280::bmp280::~bmp280()	1
+../bmp280/bmp280.cpp:27:6:virtual bool BMP280::bmp280::init()	1
+../bmp280/bmp280.cpp:29:6:virtual bool BMP280::bmp280i2c::init()	1
+../bmp280/bmp280.cpp:36:6:void BMP280::bmp280::main()	15
+../bmp280/bmp280.cpp:97:9:virtual uint8_t BMP280::bmp280::readReg8(BMP280::bmp280_reg8_t*)	1
+../bmp280/bmp280.cpp:101:9:virtual uint8_t BMP280::bmp280::writeReg8(BMP280::bmp280_reg8_t*)	1
+../bmp280/bmp280.cpp:105:6:virtual void BMP280::bmp280::readRegMulti(BMP280::bmp280_reg_addr_t, uint8_t*, uint8_t)	1
+../bmp280/bmp280.cpp:108:6:virtual void BMP280::bmp280::writeRegMulti()	1
+../bmp280/bmp280.cpp:111:6:void BMP280::bmp280::reset()	1
+../bmp280/bmp280.cpp:117:8:double BMP280::bmp280::bmp280_compensate_T_double(BMP280::BMP280_S32_t)	1
+../bmp280/bmp280.cpp:127:8:double BMP280::bmp280::bmp280_compensate_P_double(BMP280::BMP280_S32_t)	2
+../bmp280/bmp280.cpp:144:6:bool BMP280::bmp280::readIDReg()	2
+../bmp280/bmp280.cpp:154:6:void BMP280::bmp280::readConfigReg()	1
+../bmp280/bmp280.cpp:159:6:void BMP280::bmp280::readCtrlMeas()	1
+../bmp280/bmp280.cpp:164:6:void BMP280::bmp280::readStatusReg()	1
+../bmp280/bmp280.cpp:169:6:void BMP280::bmp280::readCal()	1
+../bmp280/bmp280.cpp:199:6:void BMP280::bmp280::setCtrlMeasReg(BMP280::bmp280_osrs_t_t, BMP280::bmp280_osrs_p_t, BMP280::bmp280_mode_t)	1
+../bmp280/bmp280.cpp:205:6:void BMP280::bmp280::setConfigReg(BMP280::bmp280_sb_t, BMP280::bmp280_filter_t, BMP280::bmp280_spi_en)	1
+../bmp280/bmp280.cpp:212:6:bool BMP280::bmp280::startMeasurement()	2
+../bmp280/bmp280.cpp:224:6:bool BMP280::bmp280::readTempPressure(double*, double*)	2
+../bmp280/bmp280.cpp:256:6:bool BMP280::bmp280::newData()	1
+../bmp280/bmp280.cpp:261:6:bool BMP280::bmp280::GetTemperature(double*)	1
+../bmp280/bmp280.cpp:265:6:bool BMP280::bmp280::GetPressure(double*)	1
+../bmp280/bmp280.cpp:273:1:BMP280::bmp280i2c::bmp280i2c(I2C_HandleTypeDef*, BMP280::bmp280_i2c_addr_t)	1
+../bmp280/bmp280.cpp:279:1:BMP280::bmp280i2c::~bmp280i2c()	2
+../bmp280/bmp280.cpp:279:1:virtual BMP280::bmp280i2c::~bmp280i2c()	1
+../bmp280/bmp280.cpp:284:9:virtual uint8_t BMP280::bmp280i2c::readReg8(BMP280::bmp280_reg8_t*)	1
+../bmp280/bmp280.cpp:294:9:virtual uint8_t BMP280::bmp280i2c::writeReg8(BMP280::bmp280_reg8_t*)	1
+../bmp280/bmp280.cpp:302:6:virtual void BMP280::bmp280i2c::readRegMulti(BMP280::bmp280_reg_addr_t, uint8_t*, uint8_t)	1
+../bmp280/bmp280.cpp:308:6:virtual void BMP280::bmp280i2c::writeRegMulti()	1

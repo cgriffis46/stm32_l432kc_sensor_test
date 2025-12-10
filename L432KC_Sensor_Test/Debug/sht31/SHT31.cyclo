@@ -1,0 +1,28 @@
+../sht31/SHT31.cpp:32:1:SHT31::SHT31(SHT31_param_t)	1
+../sht31/SHT31.cpp:49:1:SHT31::~SHT31()	2
+../sht31/SHT31.cpp:74:10:uint16_t SHT31::readStatus()	1
+../sht31/SHT31.cpp:90:19:HAL_StatusTypeDef SHT31::reset()	1
+../sht31/SHT31.cpp:99:6:void SHT31::heater(bool)	2
+../sht31/SHT31.cpp:111:6:bool SHT31::isHeaterEnabled()	1
+../sht31/SHT31.cpp:125:16:uint8_t crc8(const uint8_t*, int)	4
+../sht31/SHT31.cpp:155:19:HAL_StatusTypeDef SHT31::writeCommand(uint16_t)	1
+../sht31/SHT31.cpp:167:6:bool SHT31::FetchData(float*, float*)	14
+../sht31/SHT31.cpp:208:6:void SHT31::setHighAlert(const SHT31_Alert_t*)	2
+../sht31/SHT31.cpp:263:6:void SHT31::setLowAlert(const SHT31_Alert_t*)	2
+../sht31/SHT31.cpp:319:6:void SHT31::ReadLowAlert(SHT31_Alert_t*)	1
+../sht31/SHT31.cpp:323:6:void SHT31::ReadHighAlert(SHT31_Alert_t*)	1
+../sht31/SHT31.cpp:327:6:void SHT31::_setperiodicmode(SHT31_Sample_Rate_t)	16
+../sht31/SHT31.cpp:402:8:bool SHT31::HighTempActive()	1
+../sht31/SHT31.cpp:406:8:bool SHT31::LowTempActive()	1
+../sht31/SHT31.cpp:410:8:bool SHT31::HighHumidityActive()	1
+../sht31/SHT31.cpp:414:8:bool SHT31::LowHumidityActive()	1
+../sht31/SHT31.cpp:418:6:void SHT31::clearStatus()	1
+../sht31/SHT31.cpp:429:6:void SHT31::main()	23
+../sht31/SHT31.cpp:520:6:bool SHT31::checkDevice()	1
+../sht31/SHT31.cpp:531:6:void SHT31::SendBreak()	1
+../sht31/SHT31.cpp:545:6:bool SHT31::ForceMeasurement()	5
+../sht31/SHT31.cpp:565:6:void SHT31::_SHT31_force_measurement()	1
+../sht31/SHT31.cpp:570:6:void SHT31::SetPeriodicMode(SHT31_Sample_Rate_t)	6
+../sht31/SHT31.cpp:591:6:bool SHT31::GetTemperature(float*)	1
+../sht31/SHT31.cpp:598:6:bool SHT31::GetHumidity(float*)	1
+../sht31/SHT31.cpp:605:6:bool SHT31::newData()	1

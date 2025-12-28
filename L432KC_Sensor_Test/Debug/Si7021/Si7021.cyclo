@@ -1,0 +1,20 @@
+../Si7021/Si7021.cpp:14:1:Si7021::Si7021(Si7021_param_t)	1
+../Si7021/Si7021.cpp:28:1:Si7021::~Si7021()	2
+../Si7021/Si7021.cpp:28:1:virtual Si7021::~Si7021()	1
+../Si7021/Si7021.cpp:41:16:uint8_t crc8(const uint8_t*, int)	4
+../Si7021/Si7021.cpp:66:6:bool Si7021::readHumidity(float*)	3
+../Si7021/Si7021.cpp:92:6:bool Si7021::readTemp(float*)	2
+../Si7021/Si7021.cpp:111:6:bool Si7021::_readTempAfterRH(float*)	1
+../Si7021/Si7021.cpp:126:6:void Si7021::main()	20
+../Si7021/Si7021.cpp:195:6:bool Si7021::checkDevice()	2
+../Si7021/Si7021.cpp:202:6:void Si7021::reset()	1
+../Si7021/Si7021.cpp:209:6:void Si7021::startTempMeasurement()	1
+../Si7021/Si7021.cpp:213:6:void Si7021::startHumidityMeasurement()	1
+../Si7021/Si7021.cpp:217:6:void Si7021::_startTempMeasurement()	1
+../Si7021/Si7021.cpp:224:6:void Si7021::_startHumidityMeasurement()	1
+../Si7021/Si7021.cpp:231:6:void Si7021::_read_reg1()	1
+../Si7021/Si7021.cpp:239:6:void Si7021::_write_reg1(Si7021_heater_enable_t, Si7021_measure_res)	1
+../Si7021/Si7021.cpp:250:6:void Si7021::_read_heater_reg()	1
+../Si7021/Si7021.cpp:258:6:void Si7021::_write_heater_reg(Si7021_heater_current_t)	1
+../Si7021/Si7021.cpp:267:6:void Si7021::readTempHumidity(float*, float*)	1
+../Si7021/Si7021.cpp:273:6:bool Si7021::newData()	1

@@ -5,23 +5,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../bmp280/bmp280.cpp 
+../Si7021/Si7021.cpp 
 
 OBJS += \
-./bmp280/bmp280.o 
+./Si7021/Si7021.o 
 
 CPP_DEPS += \
-./bmp280/bmp280.d 
+./Si7021/Si7021.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-bmp280/%.o bmp280/%.su bmp280/%.cyclo: ../bmp280/%.cpp bmp280/subdir.mk
+Si7021/%.o Si7021/%.su Si7021/%.cyclo: ../Si7021/%.cpp Si7021/subdir.mk
 	arm-none-eabi-g++ "$<" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I"D:/stm32_projects/stm32_l432kc_sensor_test/L432KC_Sensor_Test/sht31" -I"D:/stm32_projects/stm32_l432kc_sensor_test/L432KC_Sensor_Test/htu21df" -I"D:/stm32_projects/L432KC_SHT31/bmp280" -I"D:/stm32_projects/stm32_l432kc_sensor_test/L432KC_Sensor_Test/bme280" -I"D:/stm32_projects/stm32_l432kc_sensor_test/L432KC_Sensor_Test/Si7021" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
-clean: clean-bmp280
+clean: clean-Si7021
 
-clean-bmp280:
-	-$(RM) ./bmp280/bmp280.cyclo ./bmp280/bmp280.d ./bmp280/bmp280.o ./bmp280/bmp280.su
+clean-Si7021:
+	-$(RM) ./Si7021/Si7021.cyclo ./Si7021/Si7021.d ./Si7021/Si7021.o ./Si7021/Si7021.su
 
-.PHONY: clean-bmp280
+.PHONY: clean-Si7021
 

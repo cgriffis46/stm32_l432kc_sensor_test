@@ -21,9 +21,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define _USE_SHT31
-#define _USE_AHT20
-#define _USE_BME280
+//#define _USE_SHT31
+//#define _USE_AHT20
+//#define _USE_BME280
+#define _USE_SI7021
+
 #ifdef _USE_SHT31
 	#include <../../sht31/SHT31.h>
 #endif
@@ -39,6 +41,9 @@
 #ifdef _USE_BME280
 	#include "../../bme280/BME280.h"
 	using namespace BME280;
+#endif
+#ifdef	_USE_SI7021
+#include "../../Si7021/Si7021.h"
 #endif
 #include <math.h>
 #include <stdio.h>
@@ -99,6 +104,19 @@ uint8_t charBuffer[255];
 	};
 	SHT31 SHT31_sensor(sht31_param);
 #endif
+
+#ifdef _USE_SI7021
+	Si7021_param_t Si7021_param = {
+			.hi2c=&hi2c1,
+			._DevAddress=SI7021_I2C_ADDR,
+			.enable=Si7021_heater_disable,
+			.heater_current=0,
+			.res=Si7021_RH12_T14
+	};
+	float Si7021_temp,Si7021_humidity;
+	Si7021 Si7021_sensor(Si7021_param);
+#endif
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -328,8 +346,35 @@ int main(void)
 
 #endif
 
+#ifdef _USE_SI7021
+                   Si7021_sensor.main();
+                   if(Si7021_sensor.newData()){
 
-    HAL_Delay(50);
+                	   Si7021_sensor.readTempHumidity(&Si7021_temp, &Si7021_humidity);
+                	  // Si7021_sensor.GetTemperature(&Si7021_temp);
+                	  // Si7021_sensor.GetHumidity(&Si7021_humidity);
+
+                		sprintf((char*)charBuffer,"Si7021 \t");
+                		HAL_UART_Transmit(&huart2,charBuffer,strlen((char*)charBuffer),HAL_MAX_DELAY);
+
+					   if (! isnan(Si7021_temp)) {  // check if 'is not a number'
+						   Si7021_temp = Si7021_temp*9/5+32;
+									 /* Write temperature to Debug UART */
+									 sprintf((char*)charBuffer,"Temp:  %f\t\t",Si7021_temp);
+									 HAL_UART_Transmit(&huart2,charBuffer,strlen((char*)charBuffer),HAL_MAX_DELAY);
+								   } else {
+									 printf("Failed to read temperature");
+							   }
+					   if (! isnan(Si7021_humidity)) {  // check if 'is not a number'
+					                           sprintf((char*)charBuffer,"RH = %f\r\n",Si7021_humidity);
+					                           HAL_UART_Transmit(&huart2,charBuffer,strlen((char*)charBuffer),HAL_MAX_DELAY);
+					                       } else {
+					                           //printf("Failed to read humidity");
+					                       }
+                   }
+
+#endif
+    HAL_Delay(10);
 
   }
   /* USER CODE END 3 */

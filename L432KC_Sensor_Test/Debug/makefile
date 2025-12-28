@@ -14,6 +14,7 @@ RM := rm -rf
 -include bmp280/subdir.mk
 -include bme280/subdir.mk
 -include aht20/subdir.mk
+-include Si7021/subdir.mk
 -include Drivers/STM32L4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -89,8 +90,8 @@ all: main-build
 main-build: L432KC_Sensor_Test.elf secondary-outputs
 
 # Tool invocations
-L432KC_Sensor_Test.elf L432KC_Sensor_Test.map: $(OBJS) $(USER_OBJS) D:\stm32_projects\L432KC_Sensor_Test\STM32L432KCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "L432KC_Sensor_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\stm32_projects\L432KC_Sensor_Test\STM32L432KCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L432KC_Sensor_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+L432KC_Sensor_Test.elf L432KC_Sensor_Test.map: $(OBJS) $(USER_OBJS) D:\stm32_projects\stm32_l432kc_sensor_test\L432KC_Sensor_Test\STM32L432KCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "L432KC_Sensor_Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\stm32_projects\stm32_l432kc_sensor_test\L432KC_Sensor_Test\STM32L432KCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L432KC_Sensor_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -26,7 +26,7 @@
 ../bmp280/bmp280.cpp:273:1:BMP280::bmp280i2c::bmp280i2c(I2C_HandleTypeDef*, BMP280::bmp280_i2c_addr_t)	24	static
 ../bmp280/bmp280.cpp:279:1:BMP280::bmp280i2c::~bmp280i2c()	16	static
 ../bmp280/bmp280.cpp:279:1:virtual BMP280::bmp280i2c::~bmp280i2c()	16	static
-../bmp280/bmp280.cpp:284:9:virtual uint8_t BMP280::bmp280i2c::readReg8(BMP280::bmp280_reg8_t*)	32	static
-../bmp280/bmp280.cpp:294:9:virtual uint8_t BMP280::bmp280i2c::writeReg8(BMP280::bmp280_reg8_t*)	32	static
-../bmp280/bmp280.cpp:302:6:virtual void BMP280::bmp280i2c::readRegMulti(BMP280::bmp280_reg_addr_t, uint8_t*, uint8_t)	32	static
-../bmp280/bmp280.cpp:308:6:virtual void BMP280::bmp280i2c::writeRegMulti()	16	static
+../bmp280/bmp280.cpp:285:9:virtual uint8_t BMP280::bmp280i2c::readReg8(BMP280::bmp280_reg8_t*)	32	static
+../bmp280/bmp280.cpp:295:9:virtual uint8_t BMP280::bmp280i2c::writeReg8(BMP280::bmp280_reg8_t*)	32	static
+../bmp280/bmp280.cpp:303:6:virtual void BMP280::bmp280i2c::readRegMulti(BMP280::bmp280_reg_addr_t, uint8_t*, uint8_t)	32	static
+../bmp280/bmp280.cpp:309:6:virtual void BMP280::bmp280i2c::writeRegMulti()	16	static

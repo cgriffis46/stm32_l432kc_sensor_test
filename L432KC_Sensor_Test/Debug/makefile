@@ -10,6 +10,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include sht31/subdir.mk
+-include mpl3115a2/subdir.mk
 -include htu21df/subdir.mk
 -include bmp280/subdir.mk
 -include bme280/subdir.mk

@@ -31,4 +31,5 @@
 "./bme280/BME280.o"
 "./bmp280/bmp280.o"
 "./htu21df/HTU21DF.o"
+"./mpl3115a2/mpl3115a2.o"
 "./sht31/SHT31.o"

@@ -57,14 +57,21 @@ public:
   void startTempMeasurement();
   void startHumidityMeasurement();
   bool checkDevice();
+  bool newData();
 private:
   HTU21DF_state_t state;
   //I2CDevice *i2c_dev = NULL; ///< Pointer to I2C bus interface
+  float _humidity, _temp;
   float _last_humidity, _last_temp;
   bool _update_temp;
   uint32_t last_update;
+  bool _newData;
   void _startTempMeasurement();
   void _startHumidityMeasurement();
+
+  bool _readTemperature(float *temperature);
+  bool _readHumidity(float *humidity);
+
 protected:
   //i2c_inst_t i2c;
   uint8_t _devAddress = HTU21DF_I2CADDR;

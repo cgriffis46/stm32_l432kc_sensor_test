@@ -46,5 +46,6 @@ aht20 \
 bme280 \
 bmp280 \
 htu21df \
+mpl3115a2 \
 sht31 \
 

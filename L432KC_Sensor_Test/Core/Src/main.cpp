@@ -24,7 +24,8 @@
 //#define _USE_SHT31
 //#define _USE_AHT20
 //#define _USE_BME280
-#define _USE_SI7021
+//#define _USE_SI7021
+#define _USE_HTU21DF
 
 #ifdef _USE_SHT31
 	#include <../../sht31/SHT31.h>
@@ -77,7 +78,9 @@ double PressureOffset=0.10;
 double p,pressure;
 uint8_t charBuffer[255];
 #ifdef _USE_HTU21DF
-	Adafruit_HTU21DF htu21df(&hi2c1);
+	float HTU21DF_temp = NAN;
+	float HTU21DF_humidity = NAN;
+	HTU21DF htu21df(&hi2c1);
 #endif
 #ifdef _USE_AHT20
 	float AHT20_temp,AHT20_humidity;
@@ -175,27 +178,28 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 #ifdef _USE_HTU21DF
+	  htu21df.main();
+	  if(htu21df.newData()){
+		  htu21df.readTemperature(&HTU21DF_temp);
 
-    t=htu21df.readTemperature();
-
-            if (! isnan(t)) {  // check if 'is not a number'
-              temperature = t;
+            if (! isnan(HTU21DF_temp)) {  // check if 'is not a number'
+            	HTU21DF_temp = HTU21DF_temp = HTU21DF_temp*9/5+32;;
               //printf("");
-              sprintf((char*)charBuffer,"Temp:  %f\t\t",temperature);
+              sprintf((char*)charBuffer,"Temp:  %f\t\t",HTU21DF_temp);
               //printf("\t\t");
               HAL_UART_Transmit(&huart2,charBuffer,strlen((char*)charBuffer),HAL_MAX_DELAY);
             } else {
               printf("Failed to read temperature");
             }
-     h=htu21df.readHumidity();
-            if (! isnan(h)) {  // check if 'is not a number'
-              humidity = h;
+            htu21df.readHumidity(&HTU21DF_humidity);
+            if (! isnan(HTU21DF_humidity)) {  // check if 'is not a number'
              // printf("");
-              sprintf((char*)charBuffer,"RH = %f\r\n",humidity);
+              sprintf((char*)charBuffer,"RH = %f\r\n",HTU21DF_humidity);
               HAL_UART_Transmit(&huart2,charBuffer,strlen((char*)charBuffer),HAL_MAX_DELAY);
             } else {
               //printf("Failed to read humidity");
             }
+      }
 #endif
 
 #ifdef _USE_AHT20
@@ -421,6 +425,7 @@ void SystemClock_Config(void)
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
   {
     Error_Handler();
+
   }
 }
 

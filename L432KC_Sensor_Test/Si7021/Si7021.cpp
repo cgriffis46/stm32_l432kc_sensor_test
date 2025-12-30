@@ -86,6 +86,7 @@ bool Si7021::readHumidity(float *h){
 	hm|= buf[1];
 
 	*h = (float(hm)*125)/65536-6;
+	_updateHumidity=false;
 	return true;
 }
 
@@ -105,6 +106,7 @@ bool Si7021::readTemp(float *t){
 	temp_code|= buf[1];
 	*t = (175.72*(float)temp_code)/65536-46.85;
 	_new_data = true;
+	_updateTemp=false;
 	return true;
 }
 
@@ -120,6 +122,7 @@ bool Si7021::_readTempAfterRH(float *t){
 	temp_code|= buf[1];
 	*t = (175.72*(float)temp_code)/65536-46.85;
 	_new_data = true;
+	_updateTemp = false;
 	return true;
 }
 

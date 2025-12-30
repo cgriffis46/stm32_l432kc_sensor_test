@@ -150,6 +150,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="bme280"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="bmp280"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="htu21df"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="mpl3115a2"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="sht31"/>
 					</sourceEntries>
 				</configuration>

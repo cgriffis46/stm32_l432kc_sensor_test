@@ -30,7 +30,6 @@ void HTU21DF::reset(void) {
   HAL_I2C_Master_Transmit(this->_hi2c,this->_devAddress,&cmd,1,HAL_MAX_DELAY);
 }
 
-
 void HTU21DF::_startTempMeasurement(){
 	uint8_t cmd;
 	cmd = HTU21DF_READTEMP;
